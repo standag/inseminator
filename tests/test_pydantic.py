@@ -1,6 +1,9 @@
 import os
 
-from pydantic import BaseSettings
+try:
+    from pydantic import BaseSettings
+except ImportError:
+    from pydantic_settings import BaseSettings
 
 from inseminator.container import Container
 
