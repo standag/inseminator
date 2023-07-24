@@ -1,7 +1,10 @@
 import inspect
 from typing import Any, Callable, Dict, Optional, Protocol, Type, Union, cast, get_type_hints
 
-from pydantic import BaseSettings
+try:
+    from pydantic import BaseSettings
+except ImportError:
+    from pydantic_settings import BaseSettings
 
 from .dependency import Dependency, StaticDependency
 from .exceptions import ResolverError
